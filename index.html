@@ -81,7 +81,7 @@
 </div>
 
 <script>
-  const TARGET = Date.UTC(2026, 10, 19, 5, 0, 0);
+  const TARGET = new Date(2026, 10, 19, 0, 0, 0).getTime();
 
   const stage = document.getElementById('stage');
   function fit() {
@@ -108,7 +108,7 @@
     el.s.textContent = pad(s);
     setTimeout(tick, 1000 - (Date.now() % 1000) + 5);
   }
-  tick();
+  if (!frozen) tick();
 </script>
 </body>
 </html>
